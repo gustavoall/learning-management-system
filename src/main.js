@@ -1,7 +1,7 @@
-import loadView from "./app/core/loadview";
-import page from "page";
+import { createApp } from 'vue';
+import App from './app/App.vue';
+import router from './app/routes/router';
 
-page('/', () => loadView('dashboard'));
-page('/lesson/:lessonId', ctx => loadView('lesson', { lessonId: ctx.params.lessonId }));
-
-page();
+createApp(App)
+  .use(router)
+  .mount('#app');
