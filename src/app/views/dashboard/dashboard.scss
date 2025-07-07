@@ -1,5 +1,20 @@
+@use '../../components/theme/variables' as var;
+
 #dashboard {
-    h1 {
-    color: blue;
+  .section-01 {
+    background: var.$gradient-01;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    .container {
+      .row {
+        .col-01 {
+          h1 {
+            color: var.$color-05;
+            text-align: center;
+          }
+        }
+      }
+    }
   }
 }

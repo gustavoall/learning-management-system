@@ -23,7 +23,7 @@
   "dependencies": {
     "@vitejs/plugin-vue": "^6.0.0",
     "bootstrap": "^5.3.7",
-    "page": "^1.11.6",
+    "swiper": "^11.2.10",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
