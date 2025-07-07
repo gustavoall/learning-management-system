@@ -16,8 +16,8 @@
 </template>
 
 <script>
-    import Header from '../../components/template/header.vue';
-    import Footer from '../../components/template/footer.vue';
+    import Header from '../../components/layout/header.vue';
+    import Footer from '../../components/layout/footer.vue';
     import './lesson.scss';
 
     export default {
