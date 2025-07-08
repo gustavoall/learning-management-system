@@ -16,9 +16,11 @@
 </template>
 
 <script>
+    import './lesson.scss';
+
+    /* COMPONENTS */
     import Header from '../../components/layout/header.vue';
     import Footer from '../../components/layout/footer.vue';
-    import './lesson.scss';
 
     export default {
         name: 'Lesson',

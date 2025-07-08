@@ -15,3 +15,18 @@
         name: "Footer"
     }
 </script>
+
+<style>
+    footer {
+        background-color: #449497;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 20px;
+    }
+    footer h2 {
+        color: #fff;
+        text-align: center;
+        margin: auto;
+    }
+</style>
