@@ -1,11 +1,23 @@
 @use '../../components/theme/variables' as var;
-
 #dashboard {
+  background-color: #4a4ab1;
+  overflow: hidden;
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0.5;
+    z-index: 1;
+  }
   .section-01 {
-    background: var.$gradient-01;
     min-height: 100vh;
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 2;
     .container {
       .row {
         .col-01 {

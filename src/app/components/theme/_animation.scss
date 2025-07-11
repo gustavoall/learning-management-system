@@ -1,0 +1,13 @@
+@mixin fades {
+    @keyframes pulse {
+        to {
+            scale: 1;
+            filter: drop-shadow(3px 8px 12px green);
+        }
+        
+        from {
+            scale: 0.7;
+            filter: drop-shadow(3px 8px 5px green);
+        }
+    }
+}
