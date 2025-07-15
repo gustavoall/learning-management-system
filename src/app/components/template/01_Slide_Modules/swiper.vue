@@ -2,6 +2,7 @@
     <swiper
     :slidesPerView="3"
     :spaceBetween="30"
+    :breakpoints="breakpoints"
     :effect="'fade'"
     :centeredSlides="true"
     :navigation="true"
@@ -60,11 +61,15 @@ const breakpoints = {
         spaceBetween: 20,
     },
     768: {
-        slidesPerView: 1,
+        slidesPerView: 2,
         spaceBetween: 20,
     },
-    1024: {
-        slidesPerView: 1,
+    1200: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+    },
+    1920: {
+        slidesPerView: 3,
         spaceBetween: 30,
     },
 };
@@ -131,8 +136,8 @@ const breakpoints = {
     }
 
     .Slide-Modules .swiper-slide-active {
-        filter: opacity(1);
-        pointer-events: all;
+        filter: opacity(1)!important;
+        pointer-events: all!important;
     }
 
     .Slide-Modules .swiper-slide-active:after {
