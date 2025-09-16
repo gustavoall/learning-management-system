@@ -3,11 +3,15 @@
         <Header />
         <section class="section-01">
             <div class="container">
-                <div class="row">
+                <div class="row row-01">
                     <div class="col-lg-12 col-01">
                         <h1>Lição</h1>
                         <p>Conteúdo da lição dinâmica.</p>
-                        <CardRevealGroup :cards="cardList" />
+                    </div>
+                </div>
+                <div class="row row-02">
+                    <div class="col-lg-12 col-01">
+                        <CardReveal :cards="cardList" />
                     </div>
                 </div>
             </div>
@@ -21,33 +25,33 @@
 
     /* COMPONENTS */
     import Header from '../../components/layout/header.vue';
+    import CardReveal from '../../components/template/Lesson-01/Card/Card_Reveal.vue'
     import Footer from '../../components/layout/footer.vue';
-    import CardRevealGroup from '../../components/template/L01_Card/Card_Reveal_Group.vue'
 
     export default {
         name: 'Lesson',
         components: {
             Header,
-            Footer,
-            CardRevealGroup
+            CardReveal,
+            Footer
         },
         data() {
             return {
                 cardList: [
                     {
-                        image: '/src/app/assets/images/modulo-01.jpeg',
-                        title: 'Vue Brabo',
-                        text: 'Esse card gira lindamente!'
+                        image: '/src/app/assets/images/card-1.png',
+                        title: 'What is Lorem Ipsum?',
+                        text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry'
                     },
                     {
-                        image: '/src/app/assets/images/modulo-01.jpeg',
-                        title: 'Componentização',
-                        text: 'Organização topzera pra escalar.'
+                        image: '/src/app/assets/images/card-1.png',
+                        title: 'Why do we use it?',
+                        text: 'It is a long established fact that a reader will.'
                     },
                     {
-                        image: '/src/app/assets/images/modulo-01.jpeg',
-                        title: 'Card Reveal Pro',
-                        text: 'Agora em modo chef 💅'
+                        image: '/src/app/assets/images/card-1.png',
+                        title: 'Where can I get some?',
+                        text: 'There are many variations of passages of Lorem Ipsum available.'
                     }
                 ]
             }
