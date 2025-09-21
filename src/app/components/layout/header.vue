@@ -1,8 +1,8 @@
 <template>
   <header>
-    <div class="logo">
-      <img src="../../assets/images/tecnologia.png" alt="">
-      <h2>LMS</h2>
+    <div class="score">
+      <img src="../../assets/images/trofeu.png" alt="">
+      <h2></h2>
     </div>
     <nav>
       <a href="/">Menu</a>
@@ -11,6 +11,7 @@
 </template>
 
 <script>
+
   export default {
     name: "Header"
   }
@@ -18,13 +19,13 @@
 
 <style>
   header {
-    background-color: #52b9bd;
+    background-color: #13293D;
     display: flex;
     align-items: center;
     padding: 15px 20px;
   }
   header h2 {
-    color: #fff;
+    color: #FABE19;
     margin-bottom: 0;
   }
   header nav {
@@ -34,11 +35,11 @@
   header nav a {
     color: #fff;
   }
-  .logo {
+  .score {
     display: flex;
     align-items: center;
   }
-  .logo img {
+  .score img {
     margin: auto;
     margin-right: 15px;
   }

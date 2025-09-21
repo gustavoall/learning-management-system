@@ -12,12 +12,12 @@
                 </div>
                 <div class="row row-02">
                     <div class="col-lg-12 col-01">
-                        <CardReveal :cards="cardList" />
+                        <CardReveal :cards="CardList" />
                     </div>
                 </div>
                 <div class="row row-03">
                     <div class="col-lg-12 col-01">
-                        <Accordion :accordions="accordionList" />
+                        <Accordion :accordions="AccordionList" />
                     </div>
                 </div>
                 <div class="row row-04">
@@ -35,6 +35,11 @@
                         <button data-bs-toggle="modal" data-bs-target="#modal1">Modal</button>
                     </div>
                 </div>
+                <div class="row row-07">
+                    <div class="col-lg-12 col-01">
+                        <Tab :tabs="TabList" />
+                    </div>
+                </div>
             </div>
         </section>
         <Footer />
@@ -47,10 +52,11 @@ import './lesson.scss';
 /* COMPONENTS */
 import Header from '../../components/layout/header.vue';
 import Modal from '../../components/template/Lesson-01/Modals/modal.vue';
-import CardReveal from '../../components/template/Lesson-01/Card/cardReveal.vue'
-import Accordion from '../../components/template/Lesson-01/Accordion/accordion.vue'
-import Slide from '../../components/template/Lesson-01/Slide/slide.vue'
-import QuestionAlternative from '../../components/template/Lesson-01/Questions/question-alternative.vue'
+import Tab from '../../components/template/Lesson-01/Tab/tab.vue';
+import CardReveal from '../../components/template/Lesson-01/Card/cardReveal.vue';
+import Accordion from '../../components/template/Lesson-01/Accordion/accordion.vue';
+import Slide from '../../components/template/Lesson-01/Slide/slide.vue';
+import QuestionAlternative from '../../components/template/Lesson-01/Questions/question-alternative.vue';
 import Footer from '../../components/layout/footer.vue';
 
 export default {
@@ -58,6 +64,7 @@ export default {
     components: {
         Header,
         Modal,
+        Tab,
         CardReveal,
         Accordion,
         Slide,
@@ -73,7 +80,21 @@ export default {
                     text: 'aeeeew'
                 }
             ],
-            cardList: [
+            TabList: [
+                {
+                    image: '/src/app/assets/images/cerebro.png',
+                    title: "1",
+                    subtitle: "one",
+                    description: "It is a long established fact that a reader will.",
+                },
+                {
+                    image: '/src/app/assets/images/cerebro.png',
+                    title: "2",
+                    subtitle: "two",
+                    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+                }
+            ],
+            CardList: [
                 {
                     image: '/src/app/assets/images/card-1.png',
                     title: 'What is Lorem Ipsum?',
@@ -90,7 +111,7 @@ export default {
                     text: 'There are many variations of passages of Lorem Ipsum available.'
                 }
             ],
-            accordionList: [
+            AccordionList: [
                 {
                     image: '/src/app/assets/images/card-1.png',
                     title: 'What is Lorem Ipsum?',
