@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="score">
-      <img src="../../assets/images/trofeu.png" alt="">
+      <!-- <img src="../../assets/images/" alt=""> -->
       <h2></h2>
     </div>
     <nav>

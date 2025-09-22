@@ -38,6 +38,13 @@
                 <div class="row row-07">
                     <div class="col-lg-12 col-01">
                         <Tab :tabs="TabList" />
+                        <button data-bs-toggle="modal" data-bs-target="#modal2">Modal</button>
+                        
+                    </div>
+                </div>
+                <div class="row row-08">
+                    <div class="col-lg-12 col-01">
+                        <QuestionChoice :questions="Question02" />
                     </div>
                 </div>
             </div>
@@ -57,6 +64,7 @@ import CardReveal from '../../components/template/Lesson-01/Card/cardReveal.vue'
 import Accordion from '../../components/template/Lesson-01/Accordion/accordion.vue';
 import Slide from '../../components/template/Lesson-01/Slide/slide.vue';
 import QuestionAlternative from '../../components/template/Lesson-01/Questions/question-alternative.vue';
+import QuestionChoice from '../../components/template/Lesson-01/Questions/question-choice.vue';
 import Footer from '../../components/layout/footer.vue';
 
 export default {
@@ -69,6 +77,7 @@ export default {
         Accordion,
         Slide,
         QuestionAlternative,
+        QuestionChoice,
         Footer
     },
     data() {
@@ -77,6 +86,11 @@ export default {
                 {
                     id: 1,
                     title: '1',
+                    text: 'aeeeew'
+                },
+                {
+                    id: 2,
+                    title: '2',
                     text: 'aeeeew'
                 }
             ],
@@ -158,8 +172,21 @@ export default {
                     feedNegative_Text: "Não foi dessa vez..."
                 }
             ],
+            Question02: [
+                {
+                    text: "Quais dessas tecnologias você já usou?",
+                    alternatives: [
+                        { text: "Vue.js", value: "vue" },
+                        { text: "React", value: "react" },
+                        { text: "Angular", value: "angular" },
+                        { text: "Svelte", value: "svelte" }
+                    ],
+                    feedback: "Essas são algumas das principais libs/frameworks do mercado!"
+                }
+            ],
         }
     }
+
 };
 
 </script>
