@@ -12,17 +12,17 @@
                 </div>
                 <div class="row row-02">
                     <div class="col-lg-12 col-01">
-                        <CardReveal :cards="CardList" />
+                        <CardReveal :list="CardList" :id="1" />
                     </div>
                 </div>
                 <div class="row row-03">
                     <div class="col-lg-12 col-01">
-                        <Accordion :accordions="AccordionList" />
+                        <Accordion :list="AccordionList" :id="1" />
                     </div>
                 </div>
                 <div class="row row-04">
                     <div class="col-lg-12 col-01">
-                        <Slide :slides="SlideList" />
+                        <Slide :list="SlideList" :id="2" />
                     </div>
                 </div>
                 <div class="row row-05">
@@ -37,9 +37,8 @@
                 </div>
                 <div class="row row-07">
                     <div class="col-lg-12 col-01">
-                        <Tab :tabs="TabList" />
+                        <Tab :list="TabList" :id="2" :initial="0" />
                         <button data-bs-toggle="modal" data-bs-target="#modal2">Modal</button>
-                        
                     </div>
                 </div>
                 <div class="row row-08">
@@ -94,66 +93,180 @@ export default {
                     text: 'aeeeew'
                 }
             ],
-            TabList: [
-                {
-                    image: '/src/app/assets/images/cerebro.png',
-                    title: "1",
-                    subtitle: "one",
-                    description: "It is a long established fact that a reader will.",
-                },
-                {
-                    image: '/src/app/assets/images/cerebro.png',
-                    title: "2",
-                    subtitle: "two",
-                    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-                }
-            ],
             CardList: [
                 {
-                    image: '/src/app/assets/images/card-1.png',
-                    title: 'What is Lorem Ipsum?',
-                    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry'
+                    id: 1,
+                    cards: [
+                        {
+                            image: '/src/app/assets/images/card-1.png',
+                            title: 'What is Lorem Ipsum?',
+                            text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry'
+                        },
+                        {
+                            image: '/src/app/assets/images/card-1.png',
+                            title: 'Why do we use it?',
+                            text: 'It is a long established fact that a reader will.'
+                        },
+                        {
+                            image: '/src/app/assets/images/card-1.png',
+                            title: 'Where can I get some?',
+                            text: 'There are many variations of passages of Lorem Ipsum available.'
+                        }
+                    ]
                 },
                 {
-                    image: '/src/app/assets/images/card-1.png',
-                    title: 'Why do we use it?',
-                    text: 'It is a long established fact that a reader will.'
-                },
-                {
-                    image: '/src/app/assets/images/card-1.png',
-                    title: 'Where can I get some?',
-                    text: 'There are many variations of passages of Lorem Ipsum available.'
+                    id: 2,
+                    cards: [
+                        {
+                            image: '/src/app/assets/images/card-1.png',
+                            title: 'What is Lorem Ipsum?',
+                            text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry'
+                        },
+                        {
+                            image: '/src/app/assets/images/card-1.png',
+                            title: 'Why do we use it?',
+                            text: 'It is a long established fact that a reader will.'
+                        },
+                        {
+                            image: '/src/app/assets/images/card-1.png',
+                            title: 'Where can I get some?',
+                            text: 'There are many variations of passages of Lorem Ipsum available.'
+                        },
+                        {
+                            image: '/src/app/assets/images/card-1.png',
+                            title: 'Where can I get some?',
+                            text: 'There are many variations of passages of Lorem Ipsum available.'
+                        }
+                    ]
                 }
             ],
             AccordionList: [
                 {
-                    image: '/src/app/assets/images/card-1.png',
-                    title: 'What is Lorem Ipsum?',
-                    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry'
+                    id: 1,
+                    accordions: [
+                        {
+                            image: '/src/app/assets/images/card-1.png',
+                            title: 'What is Lorem Ipsum?',
+                            text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry'
+                        },
+                        {
+                            image: '/src/app/assets/images/card-1.png',
+                            title: 'Why do we use it?',
+                            text: 'It is a long established fact that a reader will.'
+                        },
+                        {
+                            image: '/src/app/assets/images/card-1.png',
+                            title: 'Where can I get some?',
+                            text: 'There are many variations of passages of Lorem Ipsum available.'
+                        }
+                    ]
                 },
                 {
-                    image: '/src/app/assets/images/card-1.png',
-                    title: 'Why do we use it?',
-                    text: 'It is a long established fact that a reader will.'
-                },
-                {
-                    image: '/src/app/assets/images/card-1.png',
-                    title: 'Where can I get some?',
-                    text: 'There are many variations of passages of Lorem Ipsum available.'
+                    id: 2,
+                    accordions: [
+                        {
+                            image: '/src/app/assets/images/card-1.png',
+                            title: 'What is Lorem Ipsum?',
+                            text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry'
+                        },
+                        {
+                            image: '/src/app/assets/images/card-1.png',
+                            title: 'Why do we use it?',
+                            text: 'It is a long established fact that a reader will.'
+                        },
+                        {
+                            image: '/src/app/assets/images/card-1.png',
+                            title: 'Where can I get some?',
+                            text: 'There are many variations of passages of Lorem Ipsum available.'
+                        },
+                        {
+                            image: '/src/app/assets/images/card-1.png',
+                            title: 'Where can I get some?',
+                            text: 'There are many variations of passages of Lorem Ipsum available.'
+                        }
+                    ]
                 }
             ],
             SlideList: [
                 {
                     id: 1,
-                    text: "1",
+                    slides: [
+                        {
+                            id: 1,
+                            text: "1",
+                        },
+                        {
+                            id: 2,
+                            text: "2",
+                        },
+                        {
+                            id: 3,
+                            text: "3",
+                        }
+                    ]
                 },
                 {
                     id: 2,
-                    text: "2",
+                    slides: [
+                        {
+                            id: 1,
+                            text: "1",
+                        },
+                        {
+                            id: 2,
+                            text: "2",
+                        },
+                        {
+                            id: 3,
+                            text: "3",
+                        },
+                        {
+                            id: 4,
+                            text: "4",
+                        }
+                    ]
+                }
+            ],
+            TabList: [
+                {
+                    id: 1,
+                    tabs: [
+                        {
+                            image: '/src/app/assets/images/cerebro.png',
+                            title: "1",
+                            subtitle: "one",
+                            description: "It is a long established fact that a reader will.",
+                        },
+                        {
+                            image: '/src/app/assets/images/cerebro.png',
+                            title: "2",
+                            subtitle: "two",
+                            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+                        }
+                    ]
                 },
                 {
-                    id: 3,
-                    text: "3",
+                    id: 2,
+                    tabs: [
+                        {
+                            image: '/src/app/assets/images/cerebro.png',
+                            title: "1",
+                            subtitle: "one",
+                            description: "It is a long established fact that a reader will.",
+                        },
+                        {
+                            image: '/src/app/assets/images/cerebro.png',
+                            title: "2",
+                            subtitle: "two",
+                            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+                        },
+                        {
+                            image: '/src/app/assets/images/cerebro.png',
+                            title: "3",
+                            subtitle: "three",
+                            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+                        }
+                    ]
                 }
             ],
             Question01: [

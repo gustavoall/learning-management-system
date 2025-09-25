@@ -1,7 +1,7 @@
 <template>
     <div class="tab-group">
         <div class="tab_box" ref="tabBox">
-            <button v-for="(item, index) in tabs" :key="index" class="tab_btn"
+            <button v-for="(item, index) in localTabs" :key="index" class="tab_btn"
                 :class="{ active: activeIndex === index }" @click="setActive(index)" ref="tabBtns">
                 <img :src="item.image" :alt="item.title" />
                 <h4>{{ item.title }}</h4>
@@ -10,7 +10,7 @@
         </div>
 
         <div class="content_box">
-            <div v-for="(item, index) in tabs" :key="'c-' + index" class="content"
+            <div v-for="(item, index) in localTabs" :key="'c-' + index" class="content"
                 :class="{ active: activeIndex === index }">
                 <p>{{ item.subtitle }}</p>
                 <p>{{ item.description }}</p>
@@ -23,23 +23,30 @@
 export default {
     name: "Tab",
     props: {
-        tabs: {
-            type: Array,
-            required: true,
-        },
-        initial: {
-            type: Number,
-            default: 0,
-        },
+        list: { type: Array, required: true },
+        id: { type: Number, required: true },
+        initial: { type: Number, default: 0 }
     },
     data() {
         return {
             activeIndex: this.initial,
+            localTabs: [],
             lineStyle: {
                 width: "0px",
-                transform: "translateX(0px)",
-            },
+                transform: "translateX(0px)"
+            }
         };
+    },
+    watch: {
+        id: {
+            immediate: true,
+            handler(newId) {
+                const group = this.list.find((item) => item.id === newId);
+                this.localTabs = group ? group.tabs.map((t) => ({ ...t })) : [];
+                this.activeIndex = this.initial;
+                this.$nextTick(() => this.updateLine());
+            }
+        }
     },
     mounted() {
         const imgs = Array.from(this.$el.querySelectorAll(".tab_btn img"));
@@ -85,14 +92,13 @@ export default {
 
                 this.lineStyle = {
                     width: width + "px",
-                    transform: `translateX(${left}px)`,
+                    transform: `translateX(${left}px)`
                 };
             });
-        },
-    },
+        }
+    }
 };
 </script>
-
 <style scoped>
 .tab-group {
     margin-bottom: 60px;
@@ -201,7 +207,7 @@ export default {
     }
 }
 
-@media (max-width: 425px)  {
+@media (max-width: 425px) {
     .content_box {
         min-height: 280px;
     }
