@@ -5,7 +5,7 @@
       <h2></h2>
     </div>
     <nav>
-      <a href="/">Menu</a>
+      <a href="/Dashboard">Menu</a>
     </nav>
   </header>
 </template>

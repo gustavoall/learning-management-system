@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-lg-12 col-01">
                         <h1>Bem-vindo ao seu LMS!</h1>
-                        <slideModules />
+                        <slideModules :list="SlideList" :id="1" />
                     </div>
                 </div>
             </div>
@@ -18,12 +18,35 @@
     import './dashboard.scss';
     
     /*-> COMPONENTS <-*/
-    import slideModules from '../../components/template/01_Slide_Modules/swiper.vue'
+    import slideModules from '../../components/template/01_Slide_Modules/modules.vue'
 
     export default {
         name: 'Dashboard',
         components: {
             slideModules,
+        },
+        data() {
+            return {
+                SlideList: [
+                {
+                    id: 1,
+                    slides: [
+                        {
+                            id: 1,
+                            text: "1",
+                        },
+                        {
+                            id: 2,
+                            text: "2",
+                        },
+                        {
+                            id: 3,
+                            text: "3",
+                        }
+                    ]
+                }
+            ],
+            }
         }
     };
 </script>
