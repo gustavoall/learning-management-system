@@ -57,13 +57,13 @@ import './lesson.scss';
 
 /* COMPONENTS */
 import Header from '../../components/layout/header.vue';
-import Modal from '../../components/template/Lesson-01/Modals/modal.vue';
-import Tab from '../../components/template/Lesson-01/Tab/tab.vue';
-import CardReveal from '../../components/template/Lesson-01/Card/cardReveal.vue';
-import Accordion from '../../components/template/Lesson-01/Accordion/accordion.vue';
-import Slide from '../../components/template/Lesson-01/Slide/slide.vue';
-import QuestionAlternative from '../../components/template/Lesson-01/Questions/question-alternative.vue';
-import QuestionChoice from '../../components/template/Lesson-01/Questions/question-choice.vue';
+import Modal from '../../components/template/props/Modals/modal.vue';
+import Tab from '../../components/template/props/Tab/tab.vue';
+import CardReveal from '../../components/template/props/Card/cardReveal.vue';
+import Accordion from '../../components/template/props/Accordion/accordion.vue';
+import Slide from '../../components/template/props/Slide/slide.vue';
+import QuestionAlternative from '../../components/template/props/Questions/question-alternative.vue';
+import QuestionChoice from '../../components/template/props/Questions/question-choice.vue';
 import Footer from '../../components/layout/footer.vue';
 
 export default {

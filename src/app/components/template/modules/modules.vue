@@ -2,10 +2,15 @@
     <swiper :slidesPerView="3" :spaceBetween="30" :breakpoints="breakpoints" :effect="'fade'" :centeredSlides="true"
         :navigation="true" :pagination="{
             clickable: true,
-        }" :modules="[Pagination, Navigation]" class="Slide-Modules">
+        }" :modules="[Pagination, Navigation]" class="Modules">
         <swiper-slide v-for="(slideModules, index) in localSlide" :key="index">
             <a :href="'/lesson/' + index">
-                <div class="slide-content" :id="'Module' + slideModules.id"></div>
+                <div class="slide-content" :id="'Module' + slideModules.id">
+                    <img :src="slideModules.image" alt="">
+                    <div class="box">
+                        <p>{{ slideModules.title }}</p>
+                    </div>
+                </div>
             </a>
         </swiper-slide>
     </swiper>
@@ -70,87 +75,93 @@ const breakpoints = {
 </script>
 
 <style>
-.Slide-Modules {
+.Modules {
     width: 1080px;
     height: 400px;
     overflow: visible;
 }
 
-.Slide-Modules .swiper-button-next,
-.Slide-Modules .swiper-button-prev {
+.Modules .swiper-button-next,
+.Modules .swiper-button-prev {
     color: #fff !important;
     padding: 20px;
     border-radius: 100px;
     top: 120% !important;
 }
 
-.Slide-Modules .slide-content {
+.Modules .slide-content {
     display: flex;
     align-items: center;
-    justify-content: center;
     font-size: 24px;
     border-radius: 45px;
     height: 100%;
     box-shadow: 8px 15px 38px -20px rgba(0, 0, 0, 0.75);
 }
 
-.Slide-Modules .slide-content.module_01 {
-    background-image: url(../../../assets/images/modulo-01.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top center;
+.Modules .slide-content img {
+    object-fit: cover;
+    border-radius: 40px;
+    user-select: none;
+    width: 100%;
+    height: 100%;
+    margin: auto;
 }
 
-.Slide-Modules .slide-content.module_02 {
-    background-image: url(../../../assets/images/modulo-02.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top center;
+.Modules a .slide-content {
+    overflow: hidden;
+    position: relative;
 }
 
-.Slide-Modules .slide-content.module_03 {
-    background-image: url(../../../assets/images/modulo-03.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top center;
+.Modules a .slide-content .box {
+    background-color: #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.Slide-Modules .slide-content.module_04 {
-    background-image: url(../../../assets/images/modulo-04.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top center;
+.Modules a .slide-content:hover .box{
+    padding-top: 35px;
+    padding-bottom: 35px;
+    transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.Slide-Modules .slide-content.module_05 {
-    background-image: url(../../../assets/images/modulo-05.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top center;
+.Modules a .slide-content .box p {
+    color: #13293D;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: auto;
+    text-decoration: none !important;
 }
 
-.Slide-Modules .swiper-slide-active {
+.Modules .swiper-slide-active {
     filter: opacity(1) !important;
     pointer-events: all !important;
 }
 
-.Slide-Modules .swiper-slide-active:after {
+.Modules .swiper-slide-active:after {
     display: none !important;
 }
 
-.Slide-Modules .swiper-slide {
+.Modules .swiper-slide {
     filter: opacity(0.6);
     pointer-events: none;
 }
 
-.Slide-Modules .swiper-slide.completed:after {
+.Modules .swiper-slide.completed:after {
     background-image: url(../../../assets/images/correct.png);
     display: block !important;
     filter: drop-shadow(3px 8px 12px green);
     animation: pulse 0.5s ease-in-out;
 }
 
-.Slide-Modules .swiper-slide:after {
+.Modules .swiper-slide:after {
     content: "";
     position: absolute;
     width: 55px;
@@ -165,7 +176,7 @@ const breakpoints = {
     margin: auto;
 }
 
-.Slide-Modules .swiper-pagination {
+.Modules .swiper-pagination {
     bottom: var(--swiper-pagination-bottom, -90px);
     z-index: -1;
 }
@@ -180,11 +191,9 @@ const breakpoints = {
 }
 
 @media (max-width: 991px) {
-    .Slide-Modules {
+    .Modules {
         width: 100%;
         height: 350px;
     }
-
-    .Slide-Modules .slide-content {}
 }
 </style>

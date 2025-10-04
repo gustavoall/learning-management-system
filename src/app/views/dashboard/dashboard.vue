@@ -18,7 +18,7 @@
     import './dashboard.scss';
     
     /*-> COMPONENTS <-*/
-    import slideModules from '../../components/template/01_Slide_Modules/modules.vue'
+    import slideModules from '../../components/template/Modules/modules.vue'
 
     export default {
         name: 'Dashboard',
@@ -33,14 +33,20 @@
                     slides: [
                         {
                             id: 1,
+                            title: 'Example Lesson',
+                            image: '/src/app/assets/images/modulo-01.jpeg',
                             text: "1",
                         },
                         {
                             id: 2,
+                            title: 'Test your lesson',
+                            image: '/src/app/assets/images/modulo-02.jpeg',
                             text: "2",
                         },
                         {
                             id: 3,
+                            title: 'Credits',
+                            image: '/src/app/assets/images/modulo-03.jpeg',
                             text: "3",
                         }
                     ]
